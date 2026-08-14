@@ -66,6 +66,9 @@ Every tool implements these patterns before any user-facing feature:
 | AI Feature Eval Suite | llama-3.1-8b-instant | Scoring against golden set is formulaic |
 
 ---
+A note on model choices (updated Aug 2026): This table originally used llama-3.1-8b-instant and llama-3.3-70b-versatile. Groq deprecated both in June 2026. All six projects now run on Groq's official recommended replacements — openai/gpt-oss-20b for structured, high-volume tasks (the four projects that used the 8B model) and openai/gpt-oss-120b / qwen/qwen3.6-27b for tasks needing stronger reasoning (the two that used the 70B model). Each swap was verified against this system's own P6 eval suite before being trusted, not assumed from vendor claims alone.
+
+---
 
 ## Project architecture docs
 
