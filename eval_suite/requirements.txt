@@ -1,0 +1,6 @@
+groq
+python-dotenv
+jsonschema
+rich
+pytest
+requests

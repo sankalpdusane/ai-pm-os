@@ -1,0 +1,558 @@
+{
+  "project": "p4",
+  "model": "openai/gpt-oss-20b",
+  "timestamp": "2026-09-08T03:12:49Z",
+  "summary": {
+    "total": 10,
+    "passed": 10,
+    "failed": 0,
+    "pass_rate": 1.0,
+    "failed_ids": [],
+    "boundary_ids": [
+      "p4-009",
+      "p4-010"
+    ]
+  },
+  "cases": [
+    {
+      "id": "p4-001",
+      "passed": true,
+      "actual": {
+        "churn_type": "ACTIVATION_GAP",
+        "churn_type_confidence": "High",
+        "root_cause_hypothesis": "Users acquired through paid Instagram ads are not finding immediate value, as shown by a D1 retention of only 18% that plummets to 7% by day 7. The onboarding flow likely fails to communicate the app’s core value proposition or is too long, causing early disengagement.",
+        "actions": [
+          {
+            "rank": 1,
+            "action_title": "Redesign Onboarding Flow",
+            "action_description": "Simplify the first‑time user experience by reducing the number of screens to three, each highlighting a single core benefit and using clear, concise copy. Add a progress indicator and a skip option to lower friction.",
+            "targets_metric": "D1",
+            "expected_lift": "+8-10pp",
+            "implementation_timeline": "Fast",
+            "confidence": "High",
+            "counter_metric_at_risk": "Onboarding completion rate (may drop if too minimal)"
+          },
+          {
+            "rank": 2,
+            "action_title": "Introduce Contextual In‑App Tutorial",
+            "action_description": "Add a short, interactive tutorial that appears on launch, guiding users through the first key action and explaining its value. Use tooltips and a progress bar to keep it under 30 seconds.",
+            "targets_metric": "D1",
+            "expected_lift": "+5-7pp",
+            "implementation_timeline": "Medium",
+            "confidence": "High",
+            "counter_metric_at_risk": "App load time (may increase)"
+          },
+          {
+            "rank": 3,
+            "action_title": "Send Day‑0 Push Notification",
+            "action_description": "Trigger a push notification on the day of install reminding users to open the app and encouraging them to complete the first action. Include a short incentive or value reminder in the message.",
+            "targets_metric": "D1",
+            "expected_lift": "+3-5pp",
+            "implementation_timeline": "Fast",
+            "confidence": "Medium",
+            "counter_metric_at_risk": "Push opt‑out rate"
+          },
+          {
+            "rank": 4,
+            "action_title": "Align Ad Creative with App Experience",
+            "action_description": "Review and update Instagram ad creatives to accurately reflect the app’s core value and onboarding experience, ensuring expectations match reality. Test two variations to identify the highest CTR and lowest churn.",
+            "targets_metric": "D1",
+            "expected_lift": "+2-4pp",
+            "implementation_timeline": "Medium",
+            "confidence": "Medium",
+            "counter_metric_at_risk": "Ad spend (may increase)"
+          }
+        ],
+        "segment_comparison": "Only one cohort is provided; no segment comparison can be made.",
+        "success_definition": "D1 retention will rise by at least 10 percentage points within 4 weeks of implementing the prioritized actions, confirming the activation gap diagnosis."
+      },
+      "diff": ""
+    },
+    {
+      "id": "p4-002",
+      "passed": true,
+      "actual": {
+        "churn_type": "ACTIVATION_GAP",
+        "churn_type_confidence": "High",
+        "root_cause_hypothesis": "The referral‑code acquisition channel brings users who are excited to try the app, but the onboarding flow does not immediately communicate the core value proposition, leading to a 32% drop on day one. The feature parity claim is not enough if users cannot see a tangible benefit within the first few interactions.",
+        "actions": [
+          {
+            "rank": 1,
+            "action_title": "Streamline Onboarding Flow",
+            "action_description": "Reduce the onboarding steps to three key screens that highlight the app’s primary benefit and provide a quick tutorial. Add a progress bar and a clear call‑to‑action to complete the first transaction.",
+            "targets_metric": "D1",
+            "expected_lift": "+5-7pp",
+            "implementation_timeline": "Fast",
+            "confidence": "High",
+            "counter_metric_at_risk": "Average session depth may decrease if users skip deeper exploration"
+          },
+          {
+            "rank": 2,
+            "action_title": "Instant Value Hook",
+            "action_description": "Grant new users a free micro‑loan or instant cashback on their first transaction to demonstrate tangible benefit. Show a celebratory banner and a short success story after the first use.",
+            "targets_metric": "D1",
+            "expected_lift": "+4-6pp",
+            "implementation_timeline": "Medium",
+            "confidence": "High",
+            "counter_metric_at_risk": "Higher data usage could increase churn for users with limited data plans"
+          },
+          {
+            "rank": 3,
+            "action_title": "Personalized Welcome Push",
+            "action_description": "Send a push notification on day 0 that references the referral code and invites the user to complete a quick onboarding task. Include a personalized message that acknowledges the referrer’s recommendation.",
+            "targets_metric": "D1",
+            "expected_lift": "+2-4pp",
+            "implementation_timeline": "Fast",
+            "confidence": "Medium",
+            "counter_metric_at_risk": "Push opt‑out rate may rise if users feel spammed"
+          },
+          {
+            "rank": 4,
+            "action_title": "Onboarding Analytics Review",
+            "action_description": "Implement heat‑map tracking and session recordings for the first 100 users to identify friction points. Use insights to iterate the onboarding UI and messaging.",
+            "targets_metric": "D1",
+            "expected_lift": "+3-5pp",
+            "implementation_timeline": "Medium",
+            "confidence": "Medium",
+            "counter_metric_at_risk": "User privacy concerns could lead to a slight increase in uninstall rate"
+          }
+        ],
+        "segment_comparison": "Only one cohort is provided; no cross‑segment comparison is possible.",
+        "success_definition": "D1 retention rises to at least 40% within four weeks after implementing the top two actions."
+      },
+      "diff": ""
+    },
+    {
+      "id": "p4-003",
+      "passed": true,
+      "actual": {
+        "churn_type": "HABIT_LOOP_FAILURE",
+        "churn_type_confidence": "High",
+        "root_cause_hypothesis": "The sharp drop from 72% to 28% between day 1 and day 7 indicates users are not forming a habit; likely the game’s onboarding tutorial, while well‑rated, is too long or not engaging enough to motivate daily play, and the game lacks daily incentives or social hooks to keep users returning.",
+        "actions": [
+          {
+            "rank": 1,
+            "action_title": "Introduce Daily Login Rewards",
+            "action_description": "Add a daily login reward that unlocks a small in‑game item or currency, resetting every 24 hours and accumulating into a larger bonus after a streak.",
+            "targets_metric": "D7",
+            "expected_lift": "+6-8pp",
+            "implementation_timeline": "Medium",
+            "confidence": "High",
+            "counter_metric_at_risk": "Increased reward budget and potential in‑app purchase cost"
+          },
+          {
+            "rank": 2,
+            "action_title": "Deploy Personalized Push Notifications",
+            "action_description": "Send timely push notifications reminding users of new puzzles, streak bonuses, or limited‑time events, tailored to peak engagement windows.",
+            "targets_metric": "D7",
+            "expected_lift": "+4-6pp",
+            "implementation_timeline": "Fast",
+            "confidence": "Medium",
+            "counter_metric_at_risk": "Push notification fatigue leading to higher uninstall rate"
+          },
+          {
+            "rank": 3,
+            "action_title": "Shorten Onboarding Tutorial",
+            "action_description": "Reduce the tutorial length to 30 seconds, focusing on core mechanics and immediate play, with an optional skip button.",
+            "targets_metric": "D1",
+            "expected_lift": "+3-5pp",
+            "implementation_timeline": "Fast",
+            "confidence": "Medium",
+            "counter_metric_at_risk": "Lower tutorial completion satisfaction"
+          },
+          {
+            "rank": 4,
+            "action_title": "Add Streak and Social Sharing Features",
+            "action_description": "Introduce a streak counter that rewards consecutive daily play and enable sharing streaks on social media to create social pressure.",
+            "targets_metric": "D14",
+            "expected_lift": "+5-7pp",
+            "implementation_timeline": "Medium",
+            "confidence": "Medium",
+            "counter_metric_at_risk": "Increased data usage or privacy concerns"
+          }
+        ],
+        "segment_comparison": "Only one cohort; no comparison possible.",
+        "success_definition": "D7 retention rises by at least 6pp within 8 weeks after rollout of the prioritized actions."
+      },
+      "diff": ""
+    },
+    {
+      "id": "p4-004",
+      "passed": true,
+      "actual": {
+        "churn_type": "HABIT_LOOP_FAILURE",
+        "churn_type_confidence": "High",
+        "root_cause_hypothesis": "Users are curious enough to open the app on day one (54%) but the lack of push‑notification permission and minimal onboarding friction cause a steep drop to 19% by day seven, indicating they fail to form a daily workout habit.",
+        "actions": [
+          {
+            "rank": 1,
+            "action_title": "Prompt Push‑Notification Permission Early",
+            "action_description": "Add a modal after the first workout or after 2 days asking for notification permission, with a brief explanation of how reminders help build a routine.",
+            "targets_metric": "D7",
+            "expected_lift": "+5-7pp",
+            "implementation_timeline": "Fast",
+            "confidence": "High",
+            "counter_metric_at_risk": "uninstall rate"
+          },
+          {
+            "rank": 2,
+            "action_title": "Introduce 7‑Day Streak Badge and In‑App Reminders",
+            "action_description": "Show a streak badge on the home screen and send a gentle in‑app prompt each day to log a workout, reinforcing the habit loop.",
+            "targets_metric": "D7",
+            "expected_lift": "+4-6pp",
+            "implementation_timeline": "Medium",
+            "confidence": "Medium",
+            "counter_metric_at_risk": "average session length"
+          },
+          {
+            "rank": 3,
+            "action_title": "Add Quick‑Start Workout Templates",
+            "action_description": "Provide a set of pre‑configured 5‑minute workouts that users can start with a single tap, reducing friction for the first few sessions.",
+            "targets_metric": "D7",
+            "expected_lift": "+3-5pp",
+            "implementation_timeline": "Fast",
+            "confidence": "Medium",
+            "counter_metric_at_risk": "app open frequency"
+          },
+          {
+            "rank": 4,
+            "action_title": "Embed Microlearning Tips on Habit Formation",
+            "action_description": "Show short, actionable tips (e.g., “Set a reminder for 7 pm”) during onboarding and after each workout to educate users on building consistency.",
+            "targets_metric": "D14",
+            "expected_lift": "+3-5pp",
+            "implementation_timeline": "Medium",
+            "confidence": "Low",
+            "counter_metric_at_risk": "in‑app engagement time"
+          }
+        ],
+        "segment_comparison": "Only one cohort is provided; no cross‑segment comparison is possible.",
+        "success_definition": "D7 retention rises by at least 5pp within 8 weeks after implementing the push‑notification permission prompt, confirming the habit‑loop failure diagnosis."
+      },
+      "diff": ""
+    },
+    {
+      "id": "p4-005",
+      "passed": true,
+      "actual": {
+        "churn_type": "VALUE_DELIVERY_MISS",
+        "churn_type_confidence": "High",
+        "root_cause_hypothesis": "The dramatic 34pp drop from D7 to D14 aligns with the 14‑day free trial ending; users lose access immediately, so the product stops delivering value and churns, while the modest D1→D7 drop shows initial engagement was acceptable.",
+        "actions": [
+          {
+            "rank": 1,
+            "action_title": "Implement Soft Trial Expiration",
+            "action_description": "After 14 days, transition users to a limited‑feature mode that keeps core functionality available but restricts premium features, encouraging them to convert before full access is revoked.",
+            "targets_metric": "D14 retention",
+            "expected_lift": "+10-12pp",
+            "implementation_timeline": "Medium",
+            "confidence": "High",
+            "counter_metric_at_risk": "D30 churn may rise if users do not convert during the soft period"
+          },
+          {
+            "rank": 2,
+            "action_title": "Enhance Onboarding Flow",
+            "action_description": "Add a step‑by‑step in‑app tutorial and contextual tips that highlight key value propositions within the first 48 hours, reinforcing habit formation.",
+            "targets_metric": "D7 retention",
+            "expected_lift": "+5-7pp",
+            "implementation_timeline": "Fast",
+            "confidence": "Medium",
+            "counter_metric_at_risk": "Support ticket volume may increase as users seek help"
+          },
+          {
+            "rank": 3,
+            "action_title": "Offer 7‑Day Trial Extension to Engaged Users",
+            "action_description": "Automatically grant a 7‑day extension to users who complete at least 3 core actions before D14, giving them more time to experience value and decide to convert.",
+            "targets_metric": "D14 retention",
+            "expected_lift": "+8-10pp",
+            "implementation_timeline": "Fast",
+            "confidence": "Medium",
+            "counter_metric_at_risk": "Cost per user may rise due to extended trial usage"
+          },
+          {
+            "rank": 4,
+            "action_title": "Launch Conversion‑Boost Email Campaign",
+            "action_description": "Send a targeted email at D12 with a limited‑time discount and a quick‑start guide to premium features, nudging users toward paid conversion before trial ends.",
+            "targets_metric": "D14 retention",
+            "expected_lift": "+6-8pp",
+            "implementation_timeline": "Fast",
+            "confidence": "Medium",
+            "counter_metric_at_risk": "Email unsubscribe rate could increase slightly"
+          }
+        ],
+        "segment_comparison": "Only one cohort was provided; no cross‑segment comparison is possible.",
+        "success_definition": "A sustained +10pp lift in D14 retention within 4 weeks after deploying the soft expiration and onboarding enhancements will confirm that trial expiration is the primary churn driver."
+      },
+      "diff": ""
+    },
+    {
+      "id": "p4-006",
+      "passed": true,
+      "actual": {
+        "churn_type": "VALUE_DELIVERY_MISS",
+        "churn_type_confidence": "High",
+        "root_cause_hypothesis": "The app delivers strong initial value (71% D1, 65% D7) but loses users rapidly after the first week because the new city has only 40% of the mature-market restaurant density, leading to limited menu options, long wait times, and a poor post-order experience that collapses retention to 24% at D14 and 10% at D30.",
+        "actions": [
+          {
+            "rank": 1,
+            "action_title": "Scale Restaurant Partnerships",
+            "action_description": "Launch a targeted outreach program to onboard new restaurants in the city, offering onboarding incentives and streamlined integration tools. Track partnership growth and adjust incentives based on restaurant sign‑up velocity.",
+            "targets_metric": "D14",
+            "expected_lift": "+10-12pp",
+            "implementation_timeline": "Medium",
+            "confidence": "High",
+            "counter_metric_at_risk": "Marketing spend per new restaurant"
+          },
+          {
+            "rank": 2,
+            "action_title": "Real‑Time Order Tracking & Wait‑Time Estimates",
+            "action_description": "Implement dynamic wait‑time estimates and a real‑time order tracking interface to reduce uncertainty and improve perceived value. Ensure low latency and accurate ETA updates across all devices.",
+            "targets_metric": "D7",
+            "expected_lift": "+4-6pp",
+            "implementation_timeline": "Fast",
+            "confidence": "Medium",
+            "counter_metric_at_risk": "App load time"
+          },
+          {
+            "rank": 3,
+            "action_title": "First‑Order Discount & Loyalty Points",
+            "action_description": "Offer a 15% discount or bonus loyalty points for any repeat order within 7 days of the first order to encourage habit formation. Monitor redemption rates and adjust thresholds to balance cost and engagement.",
+            "targets_metric": "D7",
+            "expected_lift": "+5-7pp",
+            "implementation_timeline": "Fast",
+            "confidence": "Medium",
+            "counter_metric_at_risk": "Margin per order"
+          },
+          {
+            "rank": 4,
+            "action_title": "AI‑Optimized Delivery Routing",
+            "action_description": "Integrate AI routing to reduce delivery times and improve on‑time delivery rates, especially in low‑density areas. Continuously refine routing algorithms based on real‑time traffic and order patterns.",
+            "targets_metric": "D14",
+            "expected_lift": "+8-10pp",
+            "implementation_timeline": "Medium",
+            "confidence": "Medium",
+            "counter_metric_at_risk": "Delivery cost per order"
+          }
+        ],
+        "segment_comparison": "Only one cohort provided; no segment comparison possible.",
+        "success_definition": "D14 retention rises to at least 34% within three months after implementing the actions, indicating that improved restaurant supply and delivery experience mitigates the post‑first‑order churn."
+      },
+      "diff": ""
+    },
+    {
+      "id": "p4-007",
+      "passed": true,
+      "actual": {
+        "churn_type": "COMPETITIVE_SWITCH",
+        "churn_type_confidence": "High",
+        "root_cause_hypothesis": "The e‑commerce app’s users initially engage well (68% D1) but experience a steady, linear drop (≈13pp each interval) that aligns with a competitor’s recent same‑day delivery launch, indicating a gradual migration to the faster‑shipping alternative.",
+        "actions": [
+          {
+            "rank": 1,
+            "action_title": "Launch Same‑Day Delivery for High‑Demand Items",
+            "action_description": "Add a same‑day shipping option for top‑selling categories and promote it in the app’s checkout flow and home banner.",
+            "targets_metric": "D30",
+            "expected_lift": "+4-6pp",
+            "implementation_timeline": "Medium",
+            "confidence": "Medium",
+            "counter_metric_at_risk": "Increased shipping cost leading to higher cart abandonment"
+          },
+          {
+            "rank": 2,
+            "action_title": "Introduce a Tiered Loyalty Program",
+            "action_description": "Create a points system that rewards repeat purchases and offers free shipping after a threshold, highlighted in the user profile and checkout.",
+            "targets_metric": "D30",
+            "expected_lift": "+3-5pp",
+            "implementation_timeline": "Fast",
+            "confidence": "Medium",
+            "counter_metric_at_risk": "Higher marketing spend reducing profit margin"
+          },
+          {
+            "rank": 3,
+            "action_title": "Optimize Recommendations for Fast‑Shipping Products",
+            "action_description": "Re‑rank product suggestions to prioritize items with same‑day or next‑day delivery, and surface these in the home feed and search results.",
+            "targets_metric": "D14",
+            "expected_lift": "+2-4pp",
+            "implementation_timeline": "Fast",
+            "confidence": "Medium",
+            "counter_metric_at_risk": "Potentially lower conversion if recommendations feel forced"
+          },
+          {
+            "rank": 4,
+            "action_title": "Targeted Re‑engagement Email Campaign",
+            "action_description": "Send personalized emails to users who dropped off after D7, highlighting new delivery options and limited‑time discounts.",
+            "targets_metric": "D7",
+            "expected_lift": "+3-5pp",
+            "implementation_timeline": "Fast",
+            "confidence": "Medium",
+            "counter_metric_at_risk": "Increased unsubscribe rate"
+          }
+        ],
+        "segment_comparison": "Only one cohort is provided; no channel‑based comparison can be made.",
+        "success_definition": "A sustained 5pp lift in D30 retention within three months of implementing same‑day delivery confirms the competitive migration diagnosis."
+      },
+      "diff": ""
+    },
+    {
+      "id": "p4-008",
+      "passed": true,
+      "actual": {
+        "churn_type": "COMPETITIVE_SWITCH",
+        "churn_type_confidence": "High",
+        "root_cause_hypothesis": "The linear decline (14pp, 12pp, 13pp) indicates users are slowly migrating to a competitor. The recent launch of exclusive podcast content by Spotify in the same genre has likely drawn listeners away, causing a steady churn rather than an abrupt drop.",
+        "actions": [
+          {
+            "rank": 1,
+            "action_title": "Implement Loyalty Rewards for Listening Streaks",
+            "action_description": "Create a points system that rewards users for consecutive days of listening, redeemable for premium perks or exclusive content. Integrate streak tracking into the app and display progress in the home feed.",
+            "targets_metric": "D14",
+            "expected_lift": "+4-6pp",
+            "implementation_timeline": "Medium",
+            "confidence": "Medium",
+            "counter_metric_at_risk": "Premium subscription churn"
+          },
+          {
+            "rank": 2,
+            "action_title": "Launch Personalized Podcast Recommendations",
+            "action_description": "Use listening history and genre preferences to surface tailored podcast suggestions in the discovery tab. Update recommendation algorithms and add a daily “You Might Like” banner.",
+            "targets_metric": "D7",
+            "expected_lift": "+3-5pp",
+            "implementation_timeline": "Fast",
+            "confidence": "High",
+            "counter_metric_at_risk": "Data usage cost"
+          },
+          {
+            "rank": 3,
+            "action_title": "Send In-App Notifications for New Episodes",
+            "action_description": "Trigger push notifications when a subscribed podcast releases a new episode, encouraging immediate re-engagement. Include a quick-play button to reduce friction.",
+            "targets_metric": "D7",
+            "expected_lift": "+2-4pp",
+            "implementation_timeline": "Fast",
+            "confidence": "Medium",
+            "counter_metric_at_risk": "Notification fatigue leading to uninstalls"
+          },
+          {
+            "rank": 4,
+            "action_title": "Optimize Onboarding to Highlight Exclusive Content",
+            "action_description": "Revise the first-time user flow to showcase exclusive podcasts and explain how they add value. Add a short tutorial video and a clear call-to-action to explore the library.",
+            "targets_metric": "D7",
+            "expected_lift": "+2-3pp",
+            "implementation_timeline": "Fast",
+            "confidence": "Medium",
+            "counter_metric_at_risk": "Longer onboarding time reducing sign‑ups"
+          }
+        ],
+        "segment_comparison": "Only one cohort is provided, so no segment comparison is possible.",
+        "success_definition": "Achieve a 5pp lift in D30 retention within three months, confirming the competitive migration hypothesis."
+      },
+      "diff": ""
+    },
+    {
+      "id": "p4-009",
+      "passed": true,
+      "actual": {
+        "churn_type": "HABIT_LOOP_FAILURE",
+        "churn_type_confidence": "High",
+        "root_cause_hypothesis": "The sharp drop from 41% to 10% between day 1 and day 7 indicates users are not forming a daily habit; likely due to onboarding friction and lack of daily engagement cues.",
+        "actions": [
+          {
+            "rank": 1,
+            "action_title": "Streamline Onboarding Flow",
+            "action_description": "Reduce the number of onboarding screens from 5 to 2 and add a progress indicator to lower friction. Include a quick tutorial that highlights core value within 30 seconds.",
+            "targets_metric": "D7 retention",
+            "expected_lift": "+5-7pp",
+            "implementation_timeline": "Fast",
+            "confidence": "High",
+            "counter_metric_at_risk": "Initial session depth (average time per session)"
+          },
+          {
+            "rank": 2,
+            "action_title": "Deploy Personalized Daily Push Notifications",
+            "action_description": "Send a daily push with a personalized tip or reminder based on user activity, encouraging return within 24 hours. Include an opt‑in prompt to reduce fatigue.",
+            "targets_metric": "D7 retention",
+            "expected_lift": "+4-6pp",
+            "implementation_timeline": "Medium",
+            "confidence": "Medium",
+            "counter_metric_at_risk": "Unsubscribe rate"
+          },
+          {
+            "rank": 3,
+            "action_title": "Introduce Streak Badge and Progress Bar",
+            "action_description": "Add a visible streak counter and badge system that rewards consecutive daily usage, creating a visual habit loop. Update UI to display streak status on home screen.",
+            "targets_metric": "D7 retention",
+            "expected_lift": "+3-5pp",
+            "implementation_timeline": "Medium",
+            "confidence": "Medium",
+            "counter_metric_at_risk": "User frustration if streak resets"
+          },
+          {
+            "rank": 4,
+            "action_title": "A/B Test Daily Challenge Micro‑Interactions",
+            "action_description": "Implement a short daily challenge that unlocks a reward after completion, and run an A/B test to measure impact on return rate. Track completion and subsequent session length.",
+            "targets_metric": "D7 retention",
+            "expected_lift": "+2-4pp",
+            "implementation_timeline": "Slow",
+            "confidence": "Low",
+            "counter_metric_at_risk": "Session length (may decrease if users focus on challenge)"
+          }
+        ],
+        "segment_comparison": "Only one cohort provided; no segment comparison possible.",
+        "success_definition": "Achieve a +5pp lift in D7 retention within 4 weeks after deploying the top two actions."
+      },
+      "diff": ""
+    },
+    {
+      "id": "p4-010",
+      "passed": true,
+      "actual": {
+        "churn_type": "HABIT_LOOP_FAILURE",
+        "churn_type_confidence": "Medium",
+        "root_cause_hypothesis": "The app delivers its first value only after the weekly digest starts on day 7, so users experience a steep drop from 58 % to 30 % by day 7 and then continue to decline, indicating they never formed a daily habit.",
+        "actions": [
+          {
+            "rank": 1,
+            "action_title": "Immediate In‑App Onboarding Tutorial",
+            "action_description": "Launch a short, interactive tutorial on the first screen that walks users through creating a study plan and shows a sample lesson. The tutorial ends with a prompt to start their first lesson immediately.",
+            "targets_metric": "D1",
+            "expected_lift": "+4-6pp",
+            "implementation_timeline": "Fast",
+            "confidence": "High",
+            "counter_metric_at_risk": "User onboarding completion time"
+          },
+          {
+            "rank": 2,
+            "action_title": "Push Notification for First Lesson",
+            "action_description": "Send a push notification on day 0 reminding users to start their first lesson, including a direct link to the lesson and a short incentive (e.g., 10% off next month).",
+            "targets_metric": "D1",
+            "expected_lift": "+3-5pp",
+            "implementation_timeline": "Fast",
+            "confidence": "High",
+            "counter_metric_at_risk": "Push notification fatigue"
+          },
+          {
+            "rank": 3,
+            "action_title": "Personalized Email Sequence",
+            "action_description": "Create a 3‑email sequence that starts on day 1, offering a quick win lesson, a progress tracker, and a reminder to complete the first lesson. Each email includes a clear CTA and a small reward for completion.",
+            "targets_metric": "D7",
+            "expected_lift": "+5-7pp",
+            "implementation_timeline": "Medium",
+            "confidence": "Medium",
+            "counter_metric_at_risk": "Email unsubscribe rate"
+          },
+          {
+            "rank": 4,
+            "action_title": "Early Access to Weekly Digest",
+            "action_description": "Provide users with a preview of the weekly digest content on day 3 via an in‑app banner, so they see the value before the official digest launch on day 7.",
+            "targets_metric": "D14",
+            "expected_lift": "+3-5pp",
+            "implementation_timeline": "Medium",
+            "confidence": "Medium",
+            "counter_metric_at_risk": "In‑app banner click‑through rate"
+          }
+        ],
+        "segment_comparison": "Only one cohort is provided; no channel‑level comparison can be made.",
+        "success_definition": "Achieve a +10pp lift in D7 retention within 3 months of implementing the above actions, confirming that early value delivery mitigates the habit‑formation drop."
+      },
+      "diff": ""
+    }
+  ]
+}

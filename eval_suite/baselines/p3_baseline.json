@@ -1,0 +1,175 @@
+{
+  "project": "p3",
+  "model": "openai/gpt-oss-120b",
+  "timestamp": "2026-09-13T13:23:50Z",
+  "summary": {
+    "total": 10,
+    "passed": 10,
+    "failed": 0,
+    "pass_rate": 1.0,
+    "failed_ids": [],
+    "boundary_ids": []
+  },
+  "cases": [
+    {
+      "id": "p3-001",
+      "passed": true,
+      "actual": [
+        {
+          "feature_name": "Dark Mode Toggle",
+          "kano_category": "Delight",
+          "priority_rank": 1,
+          "rationale": "This feature has the highest raw RICE score and a strategic multiplier of 0.8, making it the top priority. Implementing dark mode improves user comfort and engagement, especially during evening usage, enhancing overall satisfaction.",
+          "risk": "Potential for UI inconsistencies across legacy components leading to a degraded user experience.",
+          "ship_quarter": "Q1",
+          "rice_score": 144.0
+        }
+      ],
+      "diff": ""
+    },
+    {
+      "id": "p3-002",
+      "passed": true,
+      "actual": [
+        {
+          "feature_name": "Email Digest Summary",
+          "kano_category": "Performance",
+          "priority_rank": 1,
+          "rationale": "This feature scores highest due to its strong RICE value and the 1.3x multiplier for retention, outweighing any other potential initiatives. Delivering the digest will reduce support tickets and re-engage dormant users, boosting overall retention.",
+          "risk": "Risk of low engagement if the digest content is not personalized or perceived as spam.",
+          "ship_quarter": "Q1",
+          "rice_score": 93.3
+        }
+      ],
+      "diff": ""
+    },
+    {
+      "id": "p3-003",
+      "passed": true,
+      "actual": [
+        {
+          "feature_name": "Fix Typo in Onboarding Copy",
+          "kano_category": "Must-have",
+          "priority_rank": 1,
+          "rationale": "This feature has the highest priority because it addresses a critical user-facing error that directly impacts acquisition. Fixing the typo will reduce confusion for new users, improving sign‑up completion rates and supporting acquisition goals.",
+          "risk": "Risk of introducing a new typo or formatting error during the fix.",
+          "ship_quarter": "Q1",
+          "rice_score": 100.0
+        }
+      ],
+      "diff": ""
+    },
+    {
+      "id": "p3-004",
+      "passed": true,
+      "actual": [
+        {
+          "feature_name": "One-click Checkout",
+          "kano_category": "Performance",
+          "priority_rank": 1,
+          "rationale": "This feature has the highest raw RICE score and, after applying the 1.3x multiplier for Revenue, it dominates the prioritization. Implementing one-click checkout will reduce cart abandonment by 25%, directly boosting conversion rates and revenue.",
+          "risk": "Integration complexity with existing payment systems could delay delivery and introduce bugs.",
+          "ship_quarter": "Q1",
+          "rice_score": 180.0
+        }
+      ],
+      "diff": ""
+    },
+    {
+      "id": "p3-005",
+      "passed": true,
+      "actual": [
+        {
+          "feature_name": "AI-Powered Recommendation Engine",
+          "kano_category": "Delight",
+          "priority_rank": 1,
+          "rationale": "This feature ranks highest due to its high reach and impact, despite low confidence, and the retention multiplier boosts its priority. Deploying the recommendation engine will increase user engagement and retention by providing personalized real-time suggestions.",
+          "risk": "Low confidence in model accuracy may result in irrelevant recommendations, harming user experience.",
+          "ship_quarter": "Q1",
+          "rice_score": 18.0
+        }
+      ],
+      "diff": ""
+    },
+    {
+      "id": "p3-006",
+      "passed": true,
+      "actual": [
+        {
+          "feature_name": "CSV Data Export",
+          "kano_category": "Must-have",
+          "priority_rank": 1,
+          "rationale": "This feature has the highest priority because it addresses a core efficiency need for power users, with a high RICE score and no competing initiatives. Shipping it will streamline data workflows, improve compliance, and reduce support tickets.",
+          "risk": "Risk of data integrity errors during export leading to user frustration.",
+          "ship_quarter": "Q1",
+          "rice_score": 70.0
+        }
+      ],
+      "diff": ""
+    },
+    {
+      "id": "p3-007",
+      "passed": true,
+      "actual": [
+        {
+          "feature_name": "Mobile Push Notifications",
+          "kano_category": "Performance",
+          "priority_rank": 1,
+          "rationale": "This feature scores highest due to its strong reach and impact, and the retention multiplier gives it the top priority. Shipping it will re-engage dormant users, boosting retention and reducing churn.",
+          "risk": "Risk of low opt-in rates and push fatigue causing user disengagement.",
+          "ship_quarter": "Q1",
+          "rice_score": 86.4
+        }
+      ],
+      "diff": ""
+    },
+    {
+      "id": "p3-008",
+      "passed": true,
+      "actual": [
+        {
+          "feature_name": "In-app Live Chat Support",
+          "kano_category": "Delight",
+          "priority_rank": 1,
+          "rationale": "This feature ranks highest because its high strategic multiplier and moderate RICE score outweigh other potential initiatives. Deploying in-app live chat will reduce friction for users needing support, improving retention and satisfaction.",
+          "risk": "The high engineering effort required may delay other critical initiatives, risking overall product roadmap.",
+          "ship_quarter": "Q1",
+          "rice_score": 21.0
+        }
+      ],
+      "diff": ""
+    },
+    {
+      "id": "p3-009",
+      "passed": true,
+      "actual": [
+        {
+          "feature_name": "Password Reset Flow",
+          "kano_category": "Must-have",
+          "priority_rank": 1,
+          "rationale": "This feature has the highest raw RICE score and meets a critical baseline need, so it ranks first. Implementing the password reset flow removes a major friction point, enabling all locked‑out users to regain access and improving user acquisition and retention.",
+          "risk": "Security misconfiguration could expose user credentials or allow unauthorized access.",
+          "ship_quarter": "Q1",
+          "rice_score": 300.0
+        }
+      ],
+      "diff": ""
+    },
+    {
+      "id": "p3-010",
+      "passed": true,
+      "actual": [
+        {
+          "feature_name": "Bulk User Import via CSV",
+          "kano_category": "Must-have",
+          "priority_rank": 1,
+          "rationale": "This feature ranks highest because its raw RICE score of 36.8, amplified by the 1.3 revenue multiplier, outpaces all other options. Shipping it will streamline enterprise onboarding, directly boosting subscription revenue.",
+          "risk": "Potential data corruption or import failures could lead to admin frustration and support tickets.",
+          "ship_quarter": "Q1",
+          "rice_score": 36.8
+        }
+      ],
+      "diff": ""
+    }
+  ]
+}

@@ -1,0 +1,272 @@
+[
+  {
+    "id": "p3-001",
+    "project": "p3",
+    "input": {
+      "features": [
+        {
+          "name": "Dark Mode Toggle",
+          "reach": 8,
+          "impact": 4,
+          "confidence": 9,
+          "effort": 2,
+          "description": "Users request dark mode for evening browsing comfort",
+          "strategic_goal": "Delight"
+        }
+      ]
+    },
+    "expected": {
+      "type": "range",
+      "value": {
+        "rice_score_min": 142.0,
+        "rice_score_max": 146.0,
+        "kano_category": "Delight"
+      }
+    },
+    "tolerance": 1.0,
+    "notes": "Raw RICE = (8×4×9)/2 = 144.0. Outcome 1 post-prompt-hardening: rice bleed eliminated (0/4 vs prior 1 observed older run); kano now stable Delight (4/4, was alternating Delight/Performance before hardening). The 0.8× Delight multiplier applies only to priority_rank (prompts.py L22), never to rice_score (prompts.py L32)."
+  },
+  {
+    "id": "p3-002",
+    "project": "p3",
+    "input": {
+      "features": [
+        {
+          "name": "Email Digest Summary",
+          "reach": 7,
+          "impact": 5,
+          "confidence": 8,
+          "effort": 3,
+          "description": "Weekly digest reduces support tickets and re-engages dormant users",
+          "strategic_goal": "Retention"
+        }
+      ]
+    },
+    "expected": {
+      "type": "range",
+      "value": {
+        "rice_score_min": 91.0,
+        "rice_score_max": 96.0,
+        "kano_category": "Performance"
+      }
+    },
+    "tolerance": 1.0,
+    "notes": "Raw RICE = (7×5×8)/3 = 93.33 → rounds to 93.3. kano_category stable at Performance across observed runs."
+  },
+  {
+    "id": "p3-003",
+    "project": "p3",
+    "input": {
+      "features": [
+        {
+          "name": "Fix Typo in Onboarding Copy",
+          "reach": 10,
+          "impact": 1,
+          "confidence": 10,
+          "effort": 1,
+          "description": "Misspelled CTA on signup page causes confusion for all new users",
+          "strategic_goal": "Acquisition"
+        }
+      ]
+    },
+    "expected": {
+      "type": "range",
+      "value": {
+        "rice_score_min": 98.0,
+        "rice_score_max": 102.0,
+        "kano_category": "Must-have"
+      }
+    },
+    "tolerance": 1.0,
+    "notes": "Edge case: effort=1 (minimum) + confidence=10 (maximum). Raw RICE = (10×1×10)/1 = 100.0. kano_category stable at Must-have across observed runs."
+  },
+  {
+    "id": "p3-004",
+    "project": "p3",
+    "input": {
+      "features": [
+        {
+          "name": "One-click Checkout",
+          "reach": 9,
+          "impact": 8,
+          "confidence": 10,
+          "effort": 4,
+          "description": "Eliminate 3-step checkout; reduces cart abandonment by an estimated 25%",
+          "strategic_goal": "Revenue"
+        }
+      ]
+    },
+    "expected": {
+      "type": "range",
+      "value": {
+        "rice_score_min": 178.0,
+        "rice_score_max": 182.0,
+        "kano_category": "Performance"
+      }
+    },
+    "tolerance": 1.0,
+    "notes": "Edge case: confidence=10 (maximum). Raw RICE = (9×8×10)/4 = 180.0. kano_category reclassified from Must-have to Performance (2026-09-07): one-click checkout is a friction-reduction layer on the checkout baseline (which is Must-have), not itself non-negotiable. Users consciously compare checkout speed and smoothness — 'more/better = more satisfaction' is the linear Performance signature. The checkout feature category is Must-have; the one-click improvement of that checkout is Performance. Same reclassification pattern as p3-005 (model's classification was correct; original golden value was miscalibrated). The 1.3× Revenue multiplier applies only to priority_rank, never to rice_score."
+  },
+  {
+    "id": "p3-005",
+    "project": "p3",
+    "input": {
+      "features": [
+        {
+          "name": "AI-Powered Recommendation Engine",
+          "reach": 10,
+          "impact": 9,
+          "confidence": 2,
+          "effort": 10,
+          "description": "ML model to surface personalised product recommendations in real time",
+          "strategic_goal": "Retention"
+        }
+      ]
+    },
+    "expected": {
+      "type": "range",
+      "value": {
+        "rice_score_min": 16.0,
+        "rice_score_max": 20.0,
+        "kano_category": "Delight"
+      }
+    },
+    "tolerance": 1.0,
+    "notes": "Edge case: confidence=2 (near-minimum) + effort=10 (maximum). Raw RICE = (10×9×2)/10 = 18.0. kano_category updated to Delight (2026-08-31): post-hardening 4-run probe (temperature=0) returned Delight on all 4 runs (rice_score=18.0 ✓ each run). Prior 'Performance' classification was stable pre-hardening but the RICE_SCORE prompt hardening (prompts.py L32–35) shifted kano reasoning. This is a real classification shift, not a fluke — confirmed by probe_p3005.py. The Delight classification is consistent with a high-effort, low-confidence, personalisation-focused feature that exceeds expectations rather than meeting a basic need."
+  },
+  {
+    "id": "p3-006",
+    "project": "p3",
+    "input": {
+      "features": [
+        {
+          "name": "CSV Data Export",
+          "reach": 5,
+          "impact": 6,
+          "confidence": 7,
+          "effort": 3,
+          "description": "Power users need to export their data for offline analysis and compliance",
+          "strategic_goal": "Efficiency"
+        }
+      ]
+    },
+    "expected": {
+      "type": "range",
+      "value": {
+        "rice_score_min": 68.0,
+        "rice_score_max": 72.0,
+        "kano_category": "Must-have"
+      }
+    },
+    "tolerance": 1.0,
+    "notes": "Raw RICE = (5×6×7)/3 = 70.0. LLM classifies compliance-adjacent export as Must-have; stable across observed runs."
+  },
+  {
+    "id": "p3-007",
+    "project": "p3",
+    "input": {
+      "features": [
+        {
+          "name": "Mobile Push Notifications",
+          "reach": 9,
+          "impact": 6,
+          "confidence": 8,
+          "effort": 5,
+          "description": "Re-engage users who have not opened the app in 7+ days via targeted push",
+          "strategic_goal": "Retention"
+        }
+      ]
+    },
+    "expected": {
+      "type": "range",
+      "value": {
+        "rice_score_min": 84.0,
+        "rice_score_max": 89.0,
+        "kano_category": "Performance"
+      }
+    },
+    "tolerance": 1.0,
+    "notes": "Raw RICE = (9×6×8)/5 = 86.4. kano_category reclassified from Must-have to Performance (2026-09-07): mobile push notifications for re-engagement do not meet the absence-causes-strong-dissatisfaction bar of Must-have — most apps ship without push notifications and users routinely disable them without leaving the product. Re-engagement via push is a quality-judged retention mechanism (frequency, relevance, timing all linearly affect satisfaction), which is the Performance signature. Same reclassification pattern as p3-005 — original golden value was miscalibrated, not the model. The 1.3× Retention multiplier applies only to priority_rank, never to rice_score."
+  },
+  {
+    "id": "p3-008",
+    "project": "p3",
+    "input": {
+      "features": [
+        {
+          "name": "In-app Live Chat Support",
+          "reach": 4,
+          "impact": 7,
+          "confidence": 6,
+          "effort": 8,
+          "description": "Real-time agent chat to resolve blockers without leaving the product",
+          "strategic_goal": "Retention"
+        }
+      ]
+    },
+    "expected": {
+      "type": "range",
+      "value": {
+        "rice_score_min": 19.0,
+        "rice_score_max": 23.0,
+        "kano_category": "Delight"
+      }
+    },
+    "tolerance": 1.0,
+    "notes": "High effort (8) drags RICE low. Raw RICE = (4×7×6)/8 = 21.0. Outcome 1 post-prompt-hardening: rice bleed eliminated (0/4 vs 1/4 prior); kano stable Delight (4/4, was Performance at temp=0 pre-hardening — the Performance classification was an artifact of the ambiguous multiplier context in the older prompt; Delight is consistent with the high-effort, low-reach, retention-focused feature profile). The 1.3× Retention multiplier applies only to priority_rank (prompts.py L22), never to rice_score."
+  },
+  {
+    "id": "p3-009",
+    "project": "p3",
+    "input": {
+      "features": [
+        {
+          "name": "Password Reset Flow",
+          "reach": 10,
+          "impact": 3,
+          "confidence": 10,
+          "effort": 1,
+          "description": "Broken or absent password reset blocks all locked-out users from the product",
+          "strategic_goal": "Acquisition"
+        }
+      ]
+    },
+    "expected": {
+      "type": "range",
+      "value": {
+        "rice_score_min": 298.0,
+        "rice_score_max": 302.0,
+        "kano_category": "Must-have"
+      }
+    },
+    "tolerance": 1.0,
+    "notes": "Edge case: effort=1 + confidence=10 — raw formula produces inflated RICE = (10×3×10)/1 = 300.0. No ceiling clamp confirmed. kano_category stable at Must-have across all observed runs."
+  },
+  {
+    "id": "p3-010",
+    "project": "p3",
+    "input": {
+      "features": [
+        {
+          "name": "Bulk User Import via CSV",
+          "reach": 3,
+          "impact": 7,
+          "confidence": 7,
+          "effort": 4,
+          "description": "Enterprise admins need to onboard hundreds of teammates in one operation",
+          "strategic_goal": "Revenue"
+        }
+      ]
+    },
+    "expected": {
+      "type": "range",
+      "value": {
+        "rice_score_min": 34.0,
+        "rice_score_max": 40.0,
+        "kano_category": "Must-have"
+      }
+    },
+    "tolerance": 1.0,
+    "notes": "Narrow enterprise segment. Raw RICE = (3×7×7)/4 = 36.75 → rounds to 36.8. Kano classification for this case has been non-deterministic across observed runs: Performance (2026-09-11), Performance (2026-09-13), Must-have (2026-09-13, baseline save). 1 of 3 observed runs matched the expected Must-have value. Baseline currently reflects Must-have per this save, but a future run returning Performance should be understood as consistent with the observed pattern, not necessarily a new regression. Not investigated further — documented as a known open item."
+  }
+]

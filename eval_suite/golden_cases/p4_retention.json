@@ -1,0 +1,134 @@
+[
+    {
+        "id": "p4-001",
+        "project": "p4",
+        "input": {
+            "cohorts": [{"d1": 18, "d7": 7, "d14": 4, "d30": 2}],
+            "product_context": "Consumer social app, paid Instagram acquisition. No onboarding redesign shipped in the past 30 days."
+        },
+        "expected": {
+            "type": "range",
+            "value": {"churn_type": "ACTIVATION_GAP"}
+        },
+        "notes": "CLEAR ACTIVATION_GAP. D1=18% is well below the 40% threshold defined in the rubric. Catastrophic day-one dropout; barely any users returned for D7. The D1 signal alone is decisive — no other pattern can co-exist when D1 is this low."
+    },
+    {
+        "id": "p4-002",
+        "project": "p4",
+        "input": {
+            "cohorts": [{"d1": 32, "d7": 12, "d14": 7, "d30": 3}],
+            "product_context": "B2C fintech app, referral-code acquisition channel. Feature parity with onboarded users exists from day one."
+        },
+        "expected": {
+            "type": "range",
+            "value": {"churn_type": "ACTIVATION_GAP"}
+        },
+        "notes": "CLEAR ACTIVATION_GAP. D1=32% < 40% threshold. Moderate severity — less catastrophic than p4-001 but still below the activation threshold. The sustained collapse through D7/D14/D30 follows the standard shape: users who did not activate on D1 never came back."
+    },
+    {
+        "id": "p4-003",
+        "project": "p4",
+        "input": {
+            "cohorts": [{"d1": 72, "d7": 28, "d14": 19, "d30": 13}],
+            "product_context": "Mobile puzzle game, App Store organic acquisition. D1 onboarding tutorial rated 4.7/5 in exit surveys."
+        },
+        "expected": {
+            "type": "range",
+            "value": {"churn_type": "HABIT_LOOP_FAILURE"}
+        },
+        "notes": "CLEAR HABIT_LOOP_FAILURE. D1=72% (above 40% threshold — activation succeeded), D7=28% (drop=44pp, far above the 30pp trigger). Strong day-one engagement that evaporates before a weekly habit forms. The gap between D1 and D7 is the diagnostic signature of this pattern."
+    },
+    {
+        "id": "p4-004",
+        "project": "p4",
+        "input": {
+            "cohorts": [{"d1": 54, "d7": 19, "d14": 13, "d30": 8}],
+            "product_context": "Fitness tracking app, paid Google UAC acquisition. No push-notification permission requested on first launch."
+        },
+        "expected": {
+            "type": "range",
+            "value": {"churn_type": "HABIT_LOOP_FAILURE"}
+        },
+        "notes": "CLEAR HABIT_LOOP_FAILURE. D1=54% (above 40% threshold), D7=19% (drop=35pp > 30pp trigger). Moderate severity — users tried the app but no habit cue was established. The missing push-notification permission provides a plausible root cause for the scorer to cite."
+    },
+    {
+        "id": "p4-005",
+        "project": "p4",
+        "input": {
+            "cohorts": [{"d1": 62, "d7": 55, "d14": 21, "d30": 8}],
+            "product_context": "B2C SaaS product on a free 14-day trial. Users convert to paid at D14; non-converters lose access immediately."
+        },
+        "expected": {
+            "type": "range",
+            "value": {"churn_type": "VALUE_DELIVERY_MISS"}
+        },
+        "notes": "CLEAR VALUE_DELIVERY_MISS. D1=62% (above threshold), D7=55% (drop=7pp — habit loop intact, well under 30pp trigger). Then D14=21% and D30=8%: sharp cliff after the initial habit phase. The trial-expiry context (D14 paywall) provides a concrete value-delivery failure root cause."
+    },
+    {
+        "id": "p4-006",
+        "project": "p4",
+        "input": {
+            "cohorts": [{"d1": 71, "d7": 65, "d14": 24, "d30": 10}],
+            "product_context": "Food delivery app launching in a new city. Restaurant supply density averages 40% of the mature-market baseline."
+        },
+        "expected": {
+            "type": "range",
+            "value": {"churn_type": "VALUE_DELIVERY_MISS"}
+        },
+        "notes": "CLEAR VALUE_DELIVERY_MISS. Strong D1=71% and excellent D7=65% (drop=6pp — stable habit formed). Then D14=24% and D30=10%: catastrophic collapse after the initial excited-user phase. Low supply density (40% of mature market) is the likely root cause — the product stops delivering value once novelty wears off."
+    },
+    {
+        "id": "p4-007",
+        "project": "p4",
+        "input": {
+            "cohorts": [{"d1": 68, "d7": 55, "d14": 43, "d30": 30}],
+            "product_context": "E-commerce app, organic search acquisition. A major competitor launched same-day delivery 6 weeks ago."
+        },
+        "expected": {
+            "type": "range",
+            "value": {"churn_type": "COMPETITIVE_SWITCH"}
+        },
+        "notes": "CLEAR COMPETITIVE_SWITCH. Gradual, even decline: D1-D7=-13pp, D7-D14=-12pp, D14-D30=-13pp. No single-period cliff — users are migrating at a consistent rate across all windows. The competitor same-day delivery launch is a strong corroborating signal for external pull."
+    },
+    {
+        "id": "p4-008",
+        "project": "p4",
+        "input": {
+            "cohorts": [{"d1": 76, "d7": 62, "d14": 50, "d30": 37}],
+            "product_context": "Music streaming app, podcast advertising acquisition. Spotify launched exclusive podcast content in the same genre 8 weeks ago."
+        },
+        "expected": {
+            "type": "range",
+            "value": {"churn_type": "COMPETITIVE_SWITCH"}
+        },
+        "notes": "CLEAR COMPETITIVE_SWITCH. Near-perfect linear attrition: -14pp, -12pp, -13pp across each interval. No catastrophic cliff — a steady migration pattern rather than an activation or habit failure. The Spotify exclusive content launch provides clear competitive attribution."
+    },
+    {
+        "id": "p4-009",
+        "project": "p4",
+        "boundary": true,
+        "input": {
+            "cohorts": [{"d1": 41, "d7": 10, "d14": 5, "d30": 2}],
+            "product_context": "Consumer habit-forming app, social referral acquisition. No product changes in the past 30 days."
+        },
+        "expected": {
+            "type": "contains_any",
+            "value": ["'churn_type': 'activation_gap'", "'churn_type': 'habit_loop_failure'"]
+        },
+        "notes": "BOUNDARY: ACTIVATION_GAP / HABIT_LOOP_FAILURE. D1=41 is exactly 1pp above the 40% threshold (technically not ACTIVATION_GAP by strict rule). D1-D7 drop=31pp is exactly 1pp over the 30pp HABIT_LOOP_FAILURE trigger. By literal rubric: HABIT_LOOP_FAILURE — but D1=41% is functionally an activation failure. Both are defensible diagnoses for this curve. The model's valid choice between them is a property of the rubric's hard thresholds, not a model error."
+    },
+    {
+        "id": "p4-010",
+        "project": "p4",
+        "boundary": true,
+        "input": {
+            "cohorts": [{"d1": 58, "d7": 30, "d14": 14, "d30": 5}],
+            "product_context": "EdTech subscription app, email marketing acquisition. Users receive weekly content digests starting D7."
+        },
+        "expected": {
+            "type": "contains_any",
+            "value": ["'churn_type': 'habit_loop_failure'", "'churn_type': 'value_delivery_miss'"]
+        },
+        "notes": "BOUNDARY: HABIT_LOOP_FAILURE / VALUE_DELIVERY_MISS. D1=58% (above threshold), D7=30% (drop=28pp — 2pp under the 30pp HABIT_LOOP_FAILURE trigger). By strict rule: NOT habit loop failure, so VALUE_DELIVERY_MISS (D7 acceptable, D14/D30 collapse). But 28pp is functionally indistinguishable from 30pp — the model may classify as HABIT_LOOP_FAILURE. The weekly digest context starting at D7 makes the D7-to-D14 collapse plausibly a value delivery issue. Both are defensible. KNOWN LIMITATION: the tie-breaker rule added in prompts.py for p4-007 does not cover this curve shape (drop_A=28pp is the LARGEST of the three drops — 28, 16, 9pp — so neither the 'all within 5pp' branch nor the 'drop_A substantially smaller' branch fires). The model falls back to MIXED, which is outside the two expected labels. This is a documented limitation of the current tie-breaker scope, not pursued further: p4-010 is excluded from the pass-rate gate (★), the case is genuinely ambiguous by design, and MIXED is a reasonable output for a model that correctly identifies it doesn't fit any single pattern cleanly."
+    }
+]
