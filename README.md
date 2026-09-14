@@ -16,7 +16,7 @@
 | 3 | [RICE Kano Priority Engine](https://github.com/sankalpdusane/rice-kano-priority-engine) | Feature prioritisation with stakeholder objection simulation and sensitivity analysis | ✅ Live | [Open tool](https://rice-kano-priority-engine-eevg9wtfc9ycphcgjrdn5l.streamlit.app/) |
 | 4 | [Failure Mode Retention Diagnostic](https://github.com/sankalpdusane/ai-churn-retention-action-engine) | Churn classification with counter-metric guardrails on every action | ✅ Live  | [Open tool](https://ai-churn-retention-action-engine.streamlit.app/) |
 | 5 | [PRD Generator with Eval Critic](https://github.com/sankalpdusane/ai-prd-generator-eval-critic) | Three-agent write-critique-revise loop with hard SHIP/NO-SHIP gate | ✅ Live   | [Open tool](https://ai-prd-generator-eval-critic-2ox5pweu2jk5fk6dhmhw2e.streamlit.app/) |
-| 6 | AI Feature Eval Suite | Automated regression testing for AI judgment using golden test cases | 📋 Planned | Soon |
+| 6 | [AI Feature Eval Suite](eval_suite/) | Automated regression testing for AI judgment using golden test cases | ✅ Live | [Latest report](eval_suite/reports/latest.md) |
 
 ---
 
