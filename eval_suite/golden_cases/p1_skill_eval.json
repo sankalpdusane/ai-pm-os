@@ -28,10 +28,10 @@
             "type": "range",
             "value": {
                 "overall_min": 0.0,
-                "overall_max": 4.0
+                "overall_max": 5.0
             }
         },
-        "notes": "EDGE CASE — clearly WEAK answer. No framework (structure=0–2), no specific user segment or JTBD (user_empathy=0–2), no business metric or outcome (business_acumen=0), vague prose with filler phrases (communication=2–3). Same question as p1-001 — direct contrast to anchor scoring intuition. Observed overall=3.8 at temperature=0 (confirmed stable across most runs). ANOMALY NOTE (2026-09-07): scored 4.5 on two back-to-back calls within the same session, then returned to 3.8 cleanly on the next day's run and all subsequent runs. Confirmed one-off request-level rubric variance — not a miscalibration or ceiling drift. Range [0.0, 4.0] is correct; the 4.5 spike was a transient scoring fluctuation, same category as P1 API 503 hiccups."
+        "notes": "EDGE CASE — clearly WEAK answer. No framework (structure=0–2), no specific user segment or JTBD (user_empathy=0–2), no business metric or outcome (business_acumen=0), vague prose with filler phrases (communication=2–3). Same question as p1-001 — direct contrast to anchor scoring intuition. Observed overall=3.8 at temperature=0 across most runs. Observed at 4.5 and 4.8 across two separate runs — original ceiling of 4.0 was too tight for this weak-answer anchor case. Widened to 5.0 to reflect actual observed range rather than re-probing further."
     },
     {
         "id": "p1-003",

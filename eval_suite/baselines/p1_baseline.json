@@ -1,7 +1,7 @@
 {
   "project": "p1",
   "model": "openai/gpt-oss-20b",
-  "timestamp": "2026-09-07T12:08:31Z",
+  "timestamp": "2026-09-14T04:29:07Z",
   "summary": {
     "total": 10,
     "passed": 10,
@@ -37,7 +37,7 @@
         "top_strength": "Explicitly applied the CIRCLES framework with clear signposting and concrete user insights.",
         "top_fix": "Quantify the business impact of the proposed solutions, linking them to revenue or retention metrics.",
         "ideal_opening": "First, I’d clarify the problem using the CIRCLES framework.",
-        "evaluated_at": "2026-09-07T11:40:33.116Z",
+        "evaluated_at": "2026-09-14T04:15:00.359Z",
         "model_used": "openai/gpt-oss-20b",
         "cached": true
       },
@@ -50,26 +50,26 @@
         "scores": {
           "structure": {
             "score": 4,
-            "feedback": "The answer lists several improvement ideas but lacks a clear framework or signposting; it jumps from algorithm to interface to monetization without transitions."
+            "feedback": "The answer lists ideas but lacks a named framework or clear signposting; it jumps between suggestions without a logical flow."
           },
           "user_empathy": {
             "score": 4,
-            "feedback": "The candidate mentions tier‑2 Indian cities and creators, but offers no specific user personas, context, or pain points beyond generic statements."
+            "feedback": "The candidate mentions tier‑2 cities but does not identify a specific creator segment or articulate concrete pain points; the insight is generic."
           },
           "business_acumen": {
-            "score": 0,
-            "feedback": "No metrics, revenue impact, or business outcomes are referenced; the answer is purely descriptive."
+            "score": 4,
+            "feedback": "There is a brief nod to monetization, but no metrics, impact estimates, or business outcome linkage are provided."
           },
           "communication": {
             "score": 7,
-            "feedback": "The response is concise and understandable, but it contains some filler and could be tightened for a presentation."
+            "feedback": "The response is concise and understandable, but it reads like a bullet list without depth or persuasive framing."
           }
         },
-        "overall": 3.8,
-        "top_strength": "Identifying monetization fairness as a key issue for creators in tier‑2 cities.",
-        "top_fix": "Provide concrete user personas, pain points, and measurable business outcomes to justify the changes.",
-        "ideal_opening": "I’d start by defining the creator segment in tier‑2 Indian cities and mapping their journey to surface the biggest friction points.",
-        "evaluated_at": "2026-09-07T11:40:34.653Z",
+        "overall": 4.8,
+        "top_strength": "Highlighting the need to simplify the monetization process for creators.",
+        "top_fix": "Ground the suggestions in specific user insights and measurable business outcomes.",
+        "ideal_opening": "First, I’d map the core challenges creators face in tier‑2 Indian cities—limited discoverability, upload friction, weak analytics, and complex monetization—so I can target the highest impact levers.",
+        "evaluated_at": "2026-09-14T04:15:01.769Z",
         "model_used": "openai/gpt-oss-20b",
         "cached": true
       },
@@ -81,27 +81,27 @@
       "actual": {
         "scores": {
           "structure": {
-            "score": 7,
-            "feedback": "You used a clear MECE diagnostic tree with signposted branches, but you didn’t name the framework explicitly. The structure is solid, though a named framework would strengthen it."
+            "score": 9,
+            "feedback": "You clearly signposted a MECE diagnostic tree, breaking the investigation into internal, external, and data integrity branches, and then added segmentation cuts and leading indicators. This framework-driven approach shows strong organization and logical flow."
           },
           "user_empathy": {
             "score": 4,
-            "feedback": "You mention creator tiers and platform splits, but you don’t articulate a specific user segment’s pain or job-to-be-done. The answer lacks depth on user motivation."
+            "feedback": "You mention creator tiers and platform splits, but you don’t articulate a specific user segment’s job-to-be-done or pain point. The answer lacks insight into why users might be disengaging."
           },
           "business_acumen": {
-            "score": 0,
-            "feedback": "You never tie the drop to a business metric or estimate impact on revenue, retention, or CAC. The answer is missing any business outcome."
+            "score": 4,
+            "feedback": "You reference an 18% drop but fail to tie it to a business metric like revenue, retention, or GMV. No quantification or causal reasoning is provided."
           },
           "communication": {
-            "score": 8,
-            "feedback": "The answer is concise and easy to follow, with minimal filler. It could be tightened slightly, but overall it’s clear and presentation-ready."
+            "score": 7,
+            "feedback": "The answer is concise and mostly clear, with minimal hedging. A few sentences could be tightened, but overall it’s presentation-ready."
           }
         },
-        "overall": 4.8,
-        "top_strength": "Systematic MECE diagnostic tree with clear branching and segmentation cuts to isolate the affected cohort",
-        "top_fix": "Add business metrics and quantify the impact of the drop on key outcomes",
-        "ideal_opening": "First, I’d confirm the drop is real by validating event counts against server logs, then systematically rule out internal, external, and data integrity causes.",
-        "evaluated_at": "2026-09-07T11:40:35.972Z",
+        "overall": 6,
+        "top_strength": "Structured MECE diagnostic tree that systematically rules out internal, external, and data integrity causes.",
+        "top_fix": "Add concrete user insights and tie findings to measurable business metrics.",
+        "ideal_opening": "First, I’d confirm the drop is real by validating event counts against server logs, then I’d structure the investigation using a MECE diagnostic tree to systematically rule out internal, external, and data integrity causes.",
+        "evaluated_at": "2026-09-14T04:15:03.286Z",
         "model_used": "openai/gpt-oss-20b",
         "cached": true
       },
@@ -118,22 +118,22 @@
           },
           "user_empathy": {
             "score": 0,
-            "feedback": "No user segment, job-to-be-done, or pain point is mentioned; the candidate does not consider who is impacted."
+            "feedback": "No mention of any user segment or pain point; the candidate does not consider who is affected by the engagement drop."
           },
           "business_acumen": {
             "score": 0,
-            "feedback": "There is no discussion of metrics, revenue impact, or business outcomes—just a vague sense of urgency."
+            "feedback": "There is no reference to business metrics, revenue impact, or any quantitative reasoning about the 18% drop."
           },
           "communication": {
             "score": 0,
-            "feedback": "The response is overly brief and unstructured, making it hard to follow or present to stakeholders."
+            "feedback": "The response is overly terse and unstructured, making it difficult to present to stakeholders or a CEO."
           }
         },
         "overall": 0,
-        "top_strength": "Acknowledged the severity of the 18% drop and the need for a quick investigation.",
-        "top_fix": "Provide a structured, data-driven investigation plan that identifies affected user segments, metrics, and potential root causes.",
-        "ideal_opening": "First, I would quantify the drop and identify which user segments and content types are most impacted.",
-        "evaluated_at": "2026-09-07T11:40:36.913Z",
+        "top_strength": "Quickly acknowledged the need for investigation",
+        "top_fix": "Outline a structured, data‑driven investigation plan that identifies affected user segments, metrics, and potential root causes before involving engineering.",
+        "ideal_opening": "First, I would define the scope of the drop and identify the key metrics that changed.",
+        "evaluated_at": "2026-09-14T04:15:04.333Z",
         "model_used": "openai/gpt-oss-20b",
         "cached": true
       },
@@ -146,26 +146,26 @@
         "scores": {
           "structure": {
             "score": 8,
-            "feedback": "The candidate explicitly names the RICE framework and walks through each feature’s Reach, Impact, Confidence, and Effort, signposting each step. This clear, step‑by‑step structure makes the answer easy to follow."
+            "feedback": "The candidate explicitly names the RICE framework and walks through Reach, Impact, Confidence, and Effort for each feature, signposting the steps clearly. However, they stop short of computing exact RICE scores for all options, which would have tightened the structure further."
           },
           "user_empathy": {
             "score": 5,
-            "feedback": "The answer references \"existing user base\" and \"newly acquired users\" but lacks deeper insight into their specific pain points or motivations. No concrete user segment or job‑to‑be‑done is identified."
+            "feedback": "The answer references broad user groups—existing and newly acquired users—but lacks specific pain points or job-to-be-done details. A deeper dive into why churn or activation matters to those users would strengthen empathy."
           },
           "business_acumen": {
             "score": 4,
-            "feedback": "Impact is discussed qualitatively (e.g., lost LTV) but no concrete metrics or quantitative estimates are provided. The answer would benefit from linking to churn rate, activation rate, or revenue impact."
+            "feedback": "The candidate mentions lifetime value and effort, but does not tie the initiatives to concrete metrics like retention, GMV, or CAC, nor estimate impact ranges. Quantifying the business upside would elevate the acumen."
           },
           "communication": {
             "score": 8,
-            "feedback": "The response is concise, free of filler, and uses clear language. It could be tightened slightly but is already presentation‑ready."
+            "feedback": "The response is concise, avoids filler, and is easy to follow. Minor repetition could be trimmed, but overall it reads well for a quick executive briefing."
           }
         },
         "overall": 6.3,
-        "top_strength": "Explicitly applying the RICE framework and signposting each component of the score.",
-        "top_fix": "Provide concrete user segments and quantify the business impact with specific metrics.",
-        "ideal_opening": "First, I’d map each feature to a RICE score to surface the trade‑offs.",
-        "evaluated_at": "2026-09-07T11:40:47.797Z",
+        "top_strength": "Explicitly applying the RICE framework to structure the prioritization",
+        "top_fix": "Add concrete user insights and quantify business impact with specific metrics",
+        "ideal_opening": "I’d start by applying the RICE framework to objectively compare the three initiatives.",
+        "evaluated_at": "2026-09-14T04:15:15.010Z",
         "model_used": "openai/gpt-oss-20b",
         "cached": true
       },
@@ -178,28 +178,28 @@
         "scores": {
           "structure": {
             "score": 8,
-            "feedback": "The answer follows a clear STAR format with explicit signposting, making the flow easy to follow. The candidate consistently labels each section, which demonstrates a structured approach. However, naming a recognized framework would have pushed the score higher."
+            "feedback": "The answer follows a clear STAR format with explicit signposting, showing a logical flow from situation to result. The candidate consistently labels each section, making the structure easy to follow."
           },
           "user_empathy": {
             "score": 7,
-            "feedback": "The candidate identifies Tier‑2 users and highlights UPI failure rates as a pain point, showing some user insight. The discussion of fallback payment design and adoption metrics indicates awareness of user needs. More detail on the users’ motivations or context would strengthen this dimension."
+            "feedback": "The candidate identifies Tier‑2 users and highlights UPI failure rates as a pain point, but the insight stops at a generic failure metric rather than a deeper exploration of user motivations or context."
           },
           "business_acumen": {
             "score": 7,
-            "feedback": "Key metrics such as failure thresholds, adoption rates, and a 6‑week head start are mentioned, linking the decision to measurable outcomes. The answer lacks a direct revenue or retention model, so the business impact remains somewhat abstract."
+            "feedback": "Metrics such as failure thresholds, adoption rates, and a 6‑week head start are mentioned, yet the answer lacks a direct link to revenue or retention impact or a quantified business outcome."
           },
           "communication": {
             "score": 8,
-            "feedback": "The response is concise, uses clear language, and avoids unnecessary hedging. The structure and signposting make it presentation‑ready. Minor filler could be trimmed for maximum brevity."
+            "feedback": "The response is concise, uses active voice, and avoids unnecessary filler, making it presentation‑ready for a senior audience."
           }
         },
         "overall": 7.5,
-        "top_strength": "Framing the launch as a reversible experiment with kill‑switch triggers and a pre‑mortem to manage risk.",
-        "top_fix": "Quantify the expected business impact—e.g., projected GMV lift or CAC reduction—to tie the decision to concrete financial outcomes.",
-        "ideal_opening": "When we had to decide on launching a payments feature in Tier‑2 cities with only 60% of the data we normally need, I framed the decision as a reversible experiment.",
-        "evaluated_at": "2026-09-07T11:41:03.477Z",
+        "top_strength": "Framing the launch as a reversible experiment with pre‑agreed kill‑switches and a pre‑mortem demonstrates strong risk mitigation and data‑driven decision making.",
+        "top_fix": "Include explicit business metrics—such as projected GMV lift or CAC reduction—and quantify the impact of the decision.",
+        "ideal_opening": "When we had to decide on launching a payments feature in Tier‑2 cities with only 60% of the data, I framed the decision as a reversible experiment with clear kill‑switches.",
+        "evaluated_at": "2026-09-14T04:29:07.736Z",
         "model_used": "openai/gpt-oss-20b",
-        "cached": true
+        "cached": false
       },
       "diff": ""
     },
@@ -210,15 +210,15 @@
         "scores": {
           "structure": {
             "score": 3,
-            "feedback": "The answer is a simple narrative with no clear framework or signposting; it jumps from describing the failure to lessons learned without a logical flow."
+            "feedback": "The answer is mostly a stream of consciousness with no clear framework or signposting. It jumps from describing the failure to lessons learned without a logical progression."
           },
           "user_empathy": {
             "score": 0,
-            "feedback": "The candidate never mentions any user or customer perspective, so there is no evidence of user empathy."
+            "feedback": "The candidate never mentions any user or user pain point; the answer is entirely focused on internal team dynamics."
           },
           "business_acumen": {
             "score": 0,
-            "feedback": "No business metrics, outcomes, or impact are discussed; the answer lacks any connection to measurable results."
+            "feedback": "No business metrics, outcomes, or impact are discussed; the answer lacks any connection to revenue or growth."
           },
           "communication": {
             "score": 7,
@@ -226,10 +226,10 @@
           }
         },
         "overall": 2.5,
-        "top_strength": "Acknowledged the importance of communication and clear planning as key lessons.",
-        "top_fix": "Include concrete details about the failure, user impact, and measurable business outcomes.",
-        "ideal_opening": "In my last role, I led a cross‑functional team to launch a new feature for our B2B SaaS product, but we missed the launch window and lost a key client.",
-        "evaluated_at": "2026-09-07T11:41:18.137Z",
+        "top_strength": "Recognized the importance of communication and clear planning as key lessons from the failure.",
+        "top_fix": "Provide concrete details about the failure, user impact, and measurable business outcomes.",
+        "ideal_opening": "In my last role, I led a feature launch that missed its adoption targets because we didn’t validate the core user need before building.",
+        "evaluated_at": "2026-09-14T04:15:33.726Z",
         "model_used": "openai/gpt-oss-20b",
         "cached": true
       },
@@ -261,7 +261,7 @@
         "top_strength": "The candidate performed a sanity check against NPCI’s reported transaction volume, grounding the estimate in real data.",
         "top_fix": "Provide specific user pain points and link the estimate to measurable business outcomes such as revenue or cost savings.",
         "ideal_opening": "I'll estimate daily UPI transactions by first segmenting the user base by usage frequency, calculating per‑segment volumes, and then validating against NPCI's reported figures.",
-        "evaluated_at": "2026-09-07T11:41:33.682Z",
+        "evaluated_at": "2026-09-14T04:15:49.259Z",
         "model_used": "openai/gpt-oss-20b",
         "cached": true
       },
@@ -274,26 +274,26 @@
         "scores": {
           "structure": {
             "score": 7,
-            "feedback": "The candidate outlines a clear competitor-response framework and signposts each step, but does not name a recognized framework. The answer is organized into threat credibility, moats, response, and metrics, showing logical flow."
+            "feedback": "The candidate clearly outlines a competitor-response framework and signposts each step, but does not name a recognized framework. The answer is organized but could benefit from a named structure for stronger clarity."
           },
           "user_empathy": {
             "score": 4,
-            "feedback": "The answer references Amazon’s Prime members and mentions Zepto’s impulse‑purchase habit, but it lacks a specific Zepto user segment or deep insight into their motivations. No evidence of user research or personas is provided."
+            "feedback": "The response references Amazon’s Prime members and Zepto’s impulse-purchase habit, yet it lacks a specific Zepto user segment or deep insight into their motivations. More concrete user personas would strengthen the empathy."
           },
           "business_acumen": {
-            "score": 4,
-            "feedback": "Metrics are mentioned (OTIF, subscription growth), yet there is no quantification of revenue impact or causal link to business outcomes. The candidate does not estimate how the strategy would affect GMV or retention."
+            "score": 5,
+            "feedback": "Metrics such as OTIF and subscription growth are mentioned, but the answer does not quantify impact on revenue, retention, or cost, nor link them to a business model."
           },
           "communication": {
-            "score": 7,
-            "feedback": "The response is concise and mostly clear, with occasional filler. The language is professional and could be presented to leadership with minor edits."
+            "score": 8,
+            "feedback": "The answer is concise and mostly clear, with minimal filler. A few sentences could be tightened for maximum brevity."
           }
         },
-        "overall": 5.5,
-        "top_strength": "Clear identification of Zepto’s unique 10‑minute delivery moat and a differentiated strategy around it.",
-        "top_fix": "Provide specific user insights and quantify the business impact of the proposed strategy.",
-        "ideal_opening": "I’d start by framing the problem: Amazon’s deep capital and logistics network pose a credible threat, so we need to leverage Zepto’s unique 10‑minute delivery moat.",
-        "evaluated_at": "2026-09-07T11:41:49.654Z",
+        "overall": 6,
+        "top_strength": "Clear competitor-response framework with explicit steps and signposting",
+        "top_fix": "Add specific user segments and quantify business impact",
+        "ideal_opening": "First, I’ll frame the problem with a competitor-response framework: assess threat credibility, identify Zepto’s durable moats, and decide between differentiation, retreat, or partnership.",
+        "evaluated_at": "2026-09-14T04:16:05.957Z",
         "model_used": "openai/gpt-oss-20b",
         "cached": true
       },
@@ -306,26 +306,26 @@
         "scores": {
           "structure": {
             "score": 7,
-            "feedback": "The answer follows a clear sequence: definition, justification, supporting metrics, and segmentation. It lacks an explicit framework name but is logically organized."
+            "feedback": "The answer follows a logical flow—definition, justification, supporting metrics, and segmentation—but it does not name a formal framework, so it falls short of a fully signposted structure."
           },
           "user_empathy": {
-            "score": 4,
-            "feedback": "The candidate mentions households and city tiers, but does not articulate a specific user segment, job-to-be-done, or pain point."
+            "score": 7,
+            "feedback": "The candidate identifies households and notes city‑tier differences, showing some user insight, but it lacks a concrete job‑to‑be‑done or pain point that would deepen the empathy."
           },
           "business_acumen": {
-            "score": 4,
-            "feedback": "While the North Star and supporting metrics are listed, there is no quantification of impact or connection to revenue or growth."
+            "score": 7,
+            "feedback": "The response references revenue relevance and supporting metrics, yet it does not quantify impact or explain how the North Star drives business outcomes."
           },
           "communication": {
-            "score": 8,
-            "feedback": "The response is concise and easy to follow, with minimal filler and clear signposting."
+            "score": 9,
+            "feedback": "The answer is concise, clear, and free of filler, making it presentation‑ready, though a few sentences could be tightened further."
           }
         },
-        "overall": 5.8,
-        "top_strength": "Defining a retention-focused North Star metric that balances user value and revenue potential",
-        "top_fix": "Provide concrete business impact and metrics to show how the North Star translates to revenue or growth",
-        "ideal_opening": "The North Star metric should capture the core value the app delivers to users while driving sustainable growth.",
-        "evaluated_at": "2026-09-07T11:41:59.679Z",
+        "overall": 7.5,
+        "top_strength": "Clear articulation of a North Star metric that balances retention and revenue, with thoughtful supporting metrics and segmentation.",
+        "top_fix": "Add concrete quantification and causal reasoning linking the metric to business outcomes, and explicitly name a framework or structure.",
+        "ideal_opening": "I would start by defining the North Star metric as Weekly Retained Households—unique households placing at least one order in two consecutive weeks—because it directly ties user loyalty to long‑term revenue.",
+        "evaluated_at": "2026-09-14T04:16:20.476Z",
         "model_used": "openai/gpt-oss-20b",
         "cached": true
       },

@@ -63,7 +63,7 @@ from rich.text import Text
 
 import config
 from preflight_check import run_preflight                        # noqa: PLC2701
-from runner import _DEFAULT_PATHS, run_project, _GROQ_PROJECTS, _DEFAULT_GROQ_CASE_DELAY  # noqa: PLC2701
+from runner import _DEFAULT_PATHS, run_project, _GROQ_PROJECTS, _DEFAULT_GROQ_CASE_DELAY, _HTTP_PROJECTS, _DEFAULT_P1_CASE_DELAY  # noqa: PLC2701
 from scorer import score_results, _score_one             # noqa: PLC2701
 from regression import check_regression, save_baseline   # noqa: PLC2701
 from report import generate_report                       # noqa: PLC2701
@@ -98,8 +98,14 @@ def _run_one(project: str, *, save: bool) -> dict[str, Any]:
     _console.print()
     _console.rule(f"[bold cyan]Project {project.upper()}[/bold cyan]")
 
-    # ── 1. Run cases ─────────────────────────────────────────────────────────
-    case_delay = _DEFAULT_GROQ_CASE_DELAY if project in _GROQ_PROJECTS else 0
+    # Per-case delay: Groq projects hit the Groq RPM limit; P1 (HTTP) hits
+    # P1's own Next.js sliding-window rate limit (10 req/60s).  Both get 7s.
+    if project in _GROQ_PROJECTS:
+        case_delay = _DEFAULT_GROQ_CASE_DELAY
+    elif project in _HTTP_PROJECTS:
+        case_delay = _DEFAULT_P1_CASE_DELAY
+    else:
+        case_delay = 0
     try:
         raw = run_project(project, case_delay=case_delay)
     except (ValueError, ImportError, RuntimeError, Exception) as exc:  # noqa: BLE001

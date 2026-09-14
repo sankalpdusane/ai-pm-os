@@ -69,6 +69,13 @@ _HTTP_PREFLIGHT_TIMEOUT = 5
 _GROQ_PROJECTS: set[str] = {"p3", "p4"}
 _DEFAULT_GROQ_CASE_DELAY: int = 7  # seconds between consecutive cases
 
+# Default per-case sleep for HTTP-backed projects (p1) when running in
+# the full suite.  P1's Next.js app enforces a sliding-window rate limit
+# of 10 requests per IP per 60 seconds.  7 s between the 10 P1 cases
+# spreads them over ~63 s, preventing the window from being exhausted
+# mid-run when prior HTTP probes have already consumed part of the budget.
+_DEFAULT_P1_CASE_DELAY: int = 7  # seconds between consecutive P1 HTTP calls
+
 # ---------------------------------------------------------------------------
 # Project adapter registry
 #
@@ -285,10 +292,9 @@ def run_project(
         :data:`_DEFAULT_PATHS` if ``None``.
     case_delay : int
         Seconds to sleep between consecutive cases.  Use this for Groq-backed
-        projects (p3, p4) when running back-to-back in the full suite to avoid
-        hitting the per-minute rate limit mid-run.  Defaults to 0 (no sleep).
-        ``run_all.py`` sets this to :data:`_DEFAULT_GROQ_CASE_DELAY` for Groq
-        projects automatically.
+        projects (p3, p4) and HTTP-backed projects (p1) when running back-to-back
+        in the full suite to avoid hitting per-minute rate limits mid-run.
+        Defaults to 0 (no sleep).  ``run_all.py`` sets this automatically.
 
     Returns
     -------
